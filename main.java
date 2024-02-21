@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.jsoup.Jsoup;
@@ -7,7 +8,7 @@ import org.jsoup.nodes.Document;//TIP To <b>Run</b> code, press <shortcut action
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
         // to see how IntelliJ IDEA suggests fixing it.
         // URL de ejemplo
@@ -17,7 +18,7 @@ public class Main {
         InputStream inputStream = url.openStream();
 
         // Parsear el contenido de la URL con BeautifulSoup
-        Document document = Jsoup.parse(inputStream, "UTF-8");
+        Document document = Jsoup.parse(inputStream.toString(), "UTF-8");
 
         // Cerrar la conexión
         inputStream.close();
@@ -25,5 +26,5 @@ public class Main {
         // Imprimir el título de la página
         System.out.println(document.title());
     }
-    }
+  
 }
