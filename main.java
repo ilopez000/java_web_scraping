@@ -14,7 +14,7 @@ public class Main {
         Document document = Jsoup.connect(url.toString()).get();
 
         // Seleccionar todos los elementos <p>
-        Elements paragraphs = document.select("p");
+        Elements paragraphs = document.select("h3.sln-political-group-name");
 
         // Iterar sobre todos los elementos <p> y extraer el texto
         for (Element paragraph : paragraphs) {
@@ -22,3 +22,7 @@ public class Main {
         }
     }
 }
+
+
+
+
