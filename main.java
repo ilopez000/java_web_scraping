@@ -20,6 +20,15 @@ public class Main {
         for (Element paragraph : paragraphs) {
             System.out.println(paragraph.text());
         }
+
+        Elements partido = document.select("h3.sln-political-group-name");
+        Elements nombre = document.select("span.sln-member-name");
+
+        String partido_=partido.text();
+        String nombre_=nombre.text();
+
+        System.out.println(partido_+"  "+nombre_);
+        
     }
 }
 
