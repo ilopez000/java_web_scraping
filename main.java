@@ -11,7 +11,12 @@ public class Main {
         // Obtener el HTML directamente con Jsoup
         Document document = Jsoup.connect(url.toString()).get();
 
-        // Imprimir el código HTML
-        System.out.println(document.toString());
+        // Seleccionar todos los elementos <p>
+        Elements paragraphs = document.select("p");
+
+        // Iterar sobre todos los elementos <p> y extraer el texto
+        for (Element paragraph : paragraphs) {
+            System.out.println(paragraph.text());
+        }
     }
 }
