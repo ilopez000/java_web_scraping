@@ -1,30 +1,17 @@
 import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import org.jsoup.nodes.Document;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        // URL de ejemplo
-        URL url = new URL("https://www.example.com/");
+        URL url = new URL("https://www.europarl.europa.eu/meps/en/197490/MAGDALENA_ADAMOWICZ/home");
 
-        // Abrir una conexión a la URL
-        InputStream inputStream = url.openStream();
+        // Obtener el HTML directamente con Jsoup
+        Document document = Jsoup.connect(url.toString()).get();
 
-        // Parsear el contenido de la URL con BeautifulSoup
-        Document document = Jsoup.parse(inputStream.toString(), "UTF-8");
-
-        // Cerrar la conexión
-        inputStream.close();
-
-        // Imprimir el título de la página
-        System.out.println(document.title());
+        // Imprimir el código HTML
+        System.out.println(document.toString());
     }
-  
 }
