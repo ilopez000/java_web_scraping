@@ -13,7 +13,7 @@ public class Main {
         // Obtener el HTML directamente con Jsoup
         Document document = Jsoup.connect(url.toString()).get();
 
-        // Seleccionar todos los elementos <p>
+        // Seleccionar el tag h3 con clase sln-political-group-name
         Elements paragraphs = document.select("h3.sln-political-group-name");
 
         // Iterar sobre todos los elementos <p> y extraer el texto
