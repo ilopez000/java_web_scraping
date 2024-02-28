@@ -15,11 +15,12 @@ public class Main {
         //getElementByID
 
         // Seleccionar los tags
-        Elements headers = document.select("h4");
+        Elements headers = document.select("h4.media-heading");
 
         for(int i=0; i<headers.size(); i++){
-            System.out.println(headers.get(i));
+            System.out.println(headers.get(i).text());
         }
+
 
   
 
