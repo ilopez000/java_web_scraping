@@ -28,7 +28,7 @@ public class Main {
 
 
         // Escribimos el archivo
-        FileUtils.writeStringToFile(new File("archivo.txt"), contenidoCompleto.toString());
+        FileUtils.writeStringToFile(new File("C:\\Users\\ignac\\Desktop\\archivo.txt"), contenidoCompleto.toString());
 
 
     }
